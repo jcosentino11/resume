@@ -1,22 +1,22 @@
-name: Resume PDF
-
+name: Resume
 on:
   push:
     branches:
       - main
 
 jobs:
-  converttopdf:
-    name: Build PDF
+  generate-pdf:
+    name: Generate PDF
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: baileyjm02/markdown-to-pdf@v1
         with:
-          input_path: RESUME.md
+          input_path: resume.md
+          theme: resume.css
           output_dir: out
+          build_html: false
       - uses: actions/upload-artifact@v3
         with:
           name: resume
           path: out
-          
