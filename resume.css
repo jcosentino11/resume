@@ -1,14 +1,9 @@
-@page {
-  size: letter;
-  margin: 0.5in 0.8in;
-}
-
 body {
   color: #000000;
   background: #eeeeee;
   font: 1.1em "Inconsolata";
   line-height: 1.2;
-  margin: 40px 0;
+  margin: 0.5in 0.8in;
 }
 
 h1 {
@@ -26,14 +21,14 @@ h1 + p {
   text-align: center;
   font-size: 90%;
   margin: 0;
-  padding-top: 5px;
+  padding: 5px 0 0 0;
 }
 
 h2 {
   border-bottom: 1px solid #000000;
   text-transform: uppercase;
   font-size: 130%;
-  margin-top: 10px;
+  margin: 10px 0 0 0;
   padding: 0;
 }
 
@@ -44,12 +39,12 @@ h3 {
 
 /* Subheading Detail Line */
 h3 + p {
-  margin-top: 5px;
+  margin: 5px 0 0 0;
   padding: 0;
 }
 
 ul {
-  margin-top: 10px;
+  margin: 10px 0 0 0;
   padding: 0;
 }
 
