@@ -15,6 +15,7 @@ jobs:
           input_path: resume.md
           theme: resume.css
           output_dir: out
+          table_of_contents: false
           build_html: false
       - uses: actions/upload-artifact@v4
         with:
