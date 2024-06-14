@@ -1,0 +1,22 @@
+name: Resume PDF
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  converttopdf:
+    name: Build PDF
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: baileyjm02/markdown-to-pdf@v1
+        with:
+          input_path: RESUME.md
+          output_dir: out
+      - uses: actions/upload-artifact@v3
+        with:
+          name: resume
+          path: out
+          
