@@ -13,11 +13,12 @@ body {
 
 h1 {
   text-transform: uppercase;
-  text-decoration: none;
   text-align: center;
   font-size: 200%;
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  font-variant: none;
 }
 
 /* email */
