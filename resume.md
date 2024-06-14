@@ -2,20 +2,22 @@
 [jcosentino11@pm.me](mailto:jcosentino11@pm.me)
 
 ## Experience:
-### SDE II *(Feb 2022 - Present)*
-Amazon Web Serivces - Seattle, WA
+### SDE II, Amazon Web Services
+Seattle, WA *(Feb 2022 - Present)*
 - TODO
 - TODO
 - TODO
 - TODO
 - TODO
 
-### Software Engineer *(May 2017 - Feb 2022)*
+### Software Engineer, Comcast 
+Philadelphia, PA *(May 2017 - Feb 2022)*
 - TODO
 - TODO
 - TODO
 
-### Software Engineer *(Jan 2016 - May 2017)*
+### Software Engineer, QVC
+West Chester, PA *(Jan 2016 - May 2017)*
 - TODO
 - TODO
 - TODO
