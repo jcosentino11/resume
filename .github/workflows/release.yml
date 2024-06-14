@@ -1,12 +1,12 @@
-name: Resume
+name: Release Resume
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 
 jobs:
-  generate-pdf:
-    name: Generate PDF
+  release-pdf:
+    name: Release PDF
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
