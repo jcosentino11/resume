@@ -1,21 +1,19 @@
 # Joseph Cosentino
-[jcosentino11@pm.me](mailto:jcosentino11@pm.me)
+[[jcosentino11@pm.me](mailto:jcosentino11@pm.me)] [[https://josephcosentino.me](https://josephcosentino.me)]
 
 ## Experience:
-### SDE II, Amazon Web Services
+### Software Engineer II, Amazon Web Services
 Seattle, WA *(Feb 2022 - Present)*
-- FleetWise
-- Responsible for developing and supporting the full suite of first-party AWS IoT
-Greengrass components.
-- Added MQTT5 support within Greengrass components, enabling customer
-edge devices to communicate in MQTT5, end-to-end, with AWS IoT Core.
-- Enhanced the Greengrass EMQX Component (MQTT5 Broker) to allow
-customers to configure broker settings without triggering a component restart,
-reducing customer downtime.
-- Led a project for supporting variable interpolation and wildcards in authorization
-policies for Greengrass’ Client Device Auth Component.
-- Mentored an intern by providing regular support and project reviews, as well as weekly
-1-on-1 meetings.
+- **AWS IoT Greengrass**: Edge Runtime for IoT Devices 
+  - Added support for variable interpolation in the AWS Greengrass Client Device Auth component. This change improved developer experience by allowing customers to write more streamline authorization policies that relied on devices' thing names. Added performance testing to the project for the first time, via Java Microbenchmark Harness, to help mitigate performance regressions. 
+  - Enhanced the AWS Greengrass MQTT Bridge component to support MQTT5. Added integration testing to the project, when there was previously none, which tests against a real MQTT broker, whose lifecycle is managed via testcontainers.
+  - Enhanced the AWS Greengrass EMQX component, allowing customers to configure the EMQX broker dynamically via Greengrass, eliminating the need for a full component restart. This involved modifying a custom EMQX plugin to retrieve Greengrass component configuration via IPC and then calling internal EMQX functions to apply the configuration.
+  - Improved messaging canaries by adding individual message tracking. This allowed us to identify dropped messages with complete accuracy. This change was incorporated into our teams SLA calculations and dashboards.
+  - Improved the fetching and updating of connectivity information (local broker IP), fixed race conditions, and optimized information caching in the Client Device Auth component. This resulted in more efficient local broker certificate updates and reduced computational load on devices.
+  - Provided support to internal and external customers, advising on Greengrass best practices and providing live support for debugging issues.
+  - Identified and fixed multiple race conditions in the AWS Greengrass Shadow Manager, a complex component that syncs cloud and local IoT Shadow documents.
+- **AWS IoT FleetWise**: Edge Agent for Vehicles
+  - Integrated a custom, persistent file stream into the AWS FleetWise Edge Agent, enabling customers to reliably collect car data and stream it to the cloud. Delivered an early access release of the project on time while working as part of an away team, in a new domain and in a complex C++ codebase.
 
 ### Software Engineer, Comcast 
 Philadelphia, PA *(May 2017 - Feb 2022)*
@@ -35,7 +33,8 @@ seconds.
 
 ### Software Engineer, QVC
 West Chester, PA *(Jan 2016 - May 2017)*
-- Developed and maintained several APIs for warehousing operations.
+- Developed and maintained APIs for warehousing operations.
+- Wrote a system for detecting discrepancies between warehouse management systems.
 
 ## Education:
 ### West Chester University of Pennsylvania
@@ -45,6 +44,7 @@ B.S. in Computer Science – Class of 2015
 - Board of Governors (Full-Tuition) Scholarship
 
 ## Skills:
-- Java is my primary language; I also have real-world experience in C++, Golang, Python, Erlang, Typescript.
-- Well-versed in most of the popular AWS services, and have expertise within AWS IoT.
-- Experienced in device software, backend systems, and web APIs.
+- **Languages**: Java, Python, Golang, Erlang, C++, Typescript
+- **AWS**: IoT Greengrass, IoT Core, FleetWise, ECS, Lambda, CloudWatch, EC2, S3, DynamoDB
+- **Protocols**: MQTT, HTTP
+- **Domains**: IoT, Authentication Systems, Device Software, Web APIs
