@@ -1,15 +1,23 @@
-.PHONY: build
-build:
-	@mkdir -p build && cd build && pdflatex ./../resume.tex
+BUILD_DIR = build
+RESUME = $(BUILD_DIR)/resume.pdf
+SOURCE = resume.tex
+
+.PHONY: all
+all: $(RESUME)
+
+$(RESUME): $(SOURCE)
+	@mkdir -p $(BUILD_DIR)
+	@cd $(BUILD_DIR) && pdflatex ./../$(SOURCE)
+	@ispell $(SOURCE)
 
 .PHONY: clean
 clean:
-	@rm -rf build
-
-.PHONY: install
-install:
-	@brew install mactex gh
+	@rm -rf $(BUILD_DIR)
 
 .PHONY: release
-release: build
+release: $(RESUME)
 	@./release.sh
+
+.PHONY: deps
+deps:
+	@brew install mactex gh ispell
