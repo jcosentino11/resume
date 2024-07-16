@@ -102,25 +102,25 @@
       {Amazon Web Services}{Seattle, Washington}
       {Software Engineer II}{Feb 2022 \textbf{--} Present}
         \resumeItemListStart
-            \resumeItem{ Added support for variable interpolation in the AWS Greengrass Client Device Auth component. This change improved developer experience by allowing customers to write more streamlined authorization policies that relied on devices' thing names. Added performance testing to the project for the first time, via Java Microbenchmark Harness, to help mitigate performance regressions. }
-            \resumeItem{ Enhanced the AWS Greengrass MQTT Bridge component to support MQTT5. Added integration testing to the project, when there was previously none, which tests against a real MQTT broker, whose lifecycle is managed via Testcontainers. }
-            \resumeItem{ Enhanced the AWS Greengrass EMQX component, allowing customers to configure the EMQX broker dynamically via Greengrass, eliminating the need for a full component restart. This involved modifying a custom EMQX plugin to retrieve Greengrass component configuration via IPC and then calling internal EMQX functions to apply the configuration. }
-            \resumeItem{ Improved messaging canaries by adding individual message tracking. This allowed us to identify dropped messages with complete accuracy. This change was incorporated into our teams SLA calculations and dashboards. }
-            \resumeItem{ Improved the fetching and updating of connectivity information (local broker IP), fixed race conditions, and optimized information caching in the Client Device Auth component. This resulted in more efficient local broker certificate updates and reduced computational load on devices. }
-            \resumeItem{ Provided support to internal and external customers, advising on Greengrass best practices and providing live support for debugging issues. }
+            \resumeItem{ Added support for variable interpolation in the AWS Greengrass Client Device Auth component, improving developer experience by allowing customers to write more streamlined authorization policies based on devices' thing names. Introduced performance testing via the Java Microbenchmark Harness to help mitigate performance regressions. }
+            \resumeItem{ Enhanced the AWS Greengrass MQTT Bridge component to support MQTT5. Added integration testing, which was previously absent, to the project, testing against a real MQTT broker. }
+            \resumeItem{ Improved the AWS Greengrass EMQX component by allowing dynamic configuration of the EMQX broker via Greengrass, eliminating the need for a full component restart. This involved modifying a custom EMQX plugin to retrieve Greengrass component configuration via IPC and apply the configuration through internal EMQX functions. }
+            \resumeItem{ Improved messaging canaries by adding individual message tracking, allowing dropped messages to be tracked accurately. This change was incorporated into our team's SLA calculations and dashboards. }
+            \resumeItem{ Removed unnecessary certificate generation operations from the AWS Greengrass Client Device Auth component by fixing race conditions and caching the cloud-fetched connectivity information required for certificate generation. }
+            \resumeItem{ Provided support to internal and external customers, advising on Greengrass best practices and offering live debugging assistance. }
             \resumeItem{ Identified and fixed multiple race conditions in the AWS Greengrass Shadow Manager, a complex component that syncs cloud and local IoT Shadow documents. }
-            \resumeItem{ Integrated a custom, persistent file stream into the AWS FleetWise Edge Agent, enabling customers to reliably collect car data and stream it to the cloud. Delivered an early access release of the project on time while working as part of an away team, in a new domain and in a complex C++ codebase. }
+            \resumeItem{ Integrated a custom, persistent file stream into the AWS FleetWise Edge Agent, enabling customers to reliably collect car data and stream it to the cloud. Delivered an early access release of the project on time while working as part of an away team in a new domain and within a complex C++ codebase. }
         \resumeItemListEnd
     \resumeSubheading
       {Comcast}{Philadelphia, Pennsylvania}
       {Software Engineer}{May 2017 \textbf{--} Feb 2022}
         \resumeItemListStart
-            \resumeItem{ Contributed to a large-scale, distributed DVR scheduling system that serviced over 10 million customers. }
-            \resumeItem{ Built a system that processed one billion TV Tune events per day. I was responsible for all aspects of the project, including design, implementation, infrastructure, monitoring/metrics, and continuous deployment. }
-            \resumeItem{ Designed and delivered an internal API for managing account tiers for DVR customers. The effort deduplicated logic that was previously maintained by several teams. }
+            \resumeItem{ Contributed to a large-scale, distributed DVR scheduling system serving over 10 million customers. }
+            \resumeItem{ Developed a system that processed one billion TV Tune events per day, handling all aspects of the project, including design, implementation, infrastructure, monitoring/metrics, and continuous deployment. }
+            \resumeItem{ Designed and delivered an internal API for managing account tiers for DVR customers, consolidating logic previously maintained by multiple teams. }
             \resumeItem{ Maintained three web APIs for performing speed tests on customer gateways and devices. }
-            \resumeItem{ Developed a Java library for performing Splunk searches in parallel. The library was used in several reporting applications, reducing their runtimes from minutes to seconds. }
-            \resumeItem{ Provided mentorship to coworkers and served as an interviewer for prospective hires. }
+            \resumeItem{ Created a Java library for performing parallel Splunk searches, used in several reporting applications to reduce their runtimes from minutes to seconds. }
+            \resumeItem{ Provided mentorship to coworkers and participated in interviewing prospective hires. }
         \resumeItemListEnd
     \resumeSubheading
       {QVC}{West Chester, Pennsylvania}
