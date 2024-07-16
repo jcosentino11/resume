@@ -106,7 +106,7 @@
             \resumeItem{ Added support for variable interpolation in the AWS Greengrass Client Device Auth component, improving developer experience by allowing customers to write more streamlined authorization policies based on devices' thing names. Introduced performance testing via the Java Microbenchmark Harness to help mitigate performance regressions. }
             \resumeItem{ Enhanced the AWS Greengrass MQTT Bridge component to support MQTT5. Added integration testing, which was previously absent, to the project, testing against a real MQTT broker. }
             \resumeItem{ Improved the AWS Greengrass EMQX component by allowing dynamic configuration of the EMQX broker via Greengrass, eliminating the need for a full component restart. This involved modifying a custom EMQX plugin to retrieve Greengrass component configuration via IPC and apply the configuration through internal EMQX functions. }
-            \resumeItem{ Improved messaging canaries by adding individual message tracking, allowing dropped messages to be tracked accurately. This change was incorporated into our team's SLA calculations and dashboards. }
+            \resumeItem{ Enhanced message-sending canaries by accurately tracking dropped messages, which improved our SLA calculations. }
             \resumeItem{ Removed unnecessary certificate generation operations from the AWS Greengrass Client Device Auth component by fixing race conditions and caching the cloud-fetched connectivity information required for certificate generation. }
             \resumeItem{ Provided support to internal and external customers, advising on Greengrass best practices and offering live debugging assistance. }
         \resumeItemListEnd
@@ -126,7 +126,7 @@
       {Software Engineer}{Jan 2016 \textbf{--} May 2017}
         \resumeItemListStart
             \resumeItem{ Developed and maintained APIs for warehousing operations. }
-            \resumeItem{ Wrote a system for detecting discrepancies between warehouse management systems. }
+            \resumeItem{ Created a system for detecting discrepancies between warehouse management systems. }
         \resumeItemListEnd
   \resumeSubHeadingListEnd
 
