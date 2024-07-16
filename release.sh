@@ -21,4 +21,4 @@ git tag ${NEXT_TAG}
 echo "Creating GitHub release"
 git push origin ${NEXT_TAG}
 gh release create --verify-tag --title "Resume ${NEXT_TAG}" --notes "" ${NEXT_TAG} build/resume.pdf
-echo "Resume ${NEXT_TAG} release d!"
+echo "Resume ${NEXT_TAG} released!"
