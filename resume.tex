@@ -1,72 +1,190 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage{hyperref}
-\usepackage{enumitem}
+% Adapted from https://github.com/arasgungore/arasgungore-CV/blob/main/main.tex
 
-\title{Joseph Cosentino}
-\date{}
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeEducationHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeOrganizationHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textit{\small #2} \\
+      \textit{\small#3}
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+%===========================================
+% BEGIN RESUME
+%-------------------------------------------
 \begin{document}
 
-\maketitle
+%-------------------------------------------
+% Heading
+%-------------------------------------------
 
-\href{mailto:jcosentino11@pm.me}{jcosentino11@pm.me} \\
-\href{https://josephcosentino.me}{https://josephcosentino.me}
+\begin{center}
+    \textbf{\Huge \scshape Joseph Cosentino} \\ \vspace{3pt}
+    \small
+    \faAt \hspace{.5pt} \href{mailto:jcosentino11@pm.me}{jcosentino11@pm.me}
+    $|$
+    \faLinkedinSquare \hspace{.5pt} \href{https://www.linkedin.com/in/jcosentino11}{jcosentino11}
+    $|$
+    \faGithub \hspace{.5pt} \href{https://github.com/jcosentino11}{jcosentino11}
+    $|$
+    \faGlobe \hspace{.5pt} \href{https://josephcosentino.me}{josephcosentino.me}
+\end{center}
 
-\section*{Experience}
+%-------------------------------------------
+% Experience
+%-------------------------------------------
 
-\subsection*{Software Engineer II, Amazon Web Services}
-Seattle, WA \textit{(Feb 2022 - Present)}
-\begin{itemize}[leftmargin=*]
-    \item \textbf{AWS IoT Greengrass}: Edge Runtime for IoT Devices 
-    \begin{itemize}
-        \item Added support for variable interpolation in the AWS Greengrass Client Device Auth component. This change improved developer experience by allowing customers to write more streamlined authorization policies that relied on devices' thing names. Added performance testing to the project for the first time, via Java Microbenchmark Harness, to help mitigate performance regressions.
-        \item Enhanced the AWS Greengrass MQTT Bridge component to support MQTT5. Added integration testing to the project, when there was previously none, which tests against a real MQTT broker, whose lifecycle is managed via testcontainers.
-        \item Enhanced the AWS Greengrass EMQX component, allowing customers to configure the EMQX broker dynamically via Greengrass, eliminating the need for a full component restart. This involved modifying a custom EMQX plugin to retrieve Greengrass component configuration via IPC and then calling internal EMQX functions to apply the configuration.
-        \item Improved messaging canaries by adding individual message tracking. This allowed us to identify dropped messages with complete accuracy. This change was incorporated into our teams SLA calculations and dashboards.
-        \item Improved the fetching and updating of connectivity information (local broker IP), fixed race conditions, and optimized information caching in the Client Device Auth component. This resulted in more efficient local broker certificate updates and reduced computational load on devices.
-        \item Provided support to internal and external customers, advising on Greengrass best practices and providing live support for debugging issues.
-        \item Identified and fixed multiple race conditions in the AWS Greengrass Shadow Manager, a complex component that syncs cloud and local IoT Shadow documents.
-    \end{itemize}
-    \item \textbf{AWS IoT FleetWise}: Edge Agent for Vehicles
-    \begin{itemize}
-        \item Integrated a custom, persistent file stream into the AWS FleetWise Edge Agent, enabling customers to reliably collect car data and stream it to the cloud. Delivered an early access release of the project on time while working as part of an away team, in a new domain and in a complex C++ codebase.
-    \end{itemize}
-\end{itemize}
+\section{Experience}
+  \vspace{3pt}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Amazon Web Services}{Seattle, Washington}
+      {Software Engineer II}{Feb 2022 \textbf{--} Present}
+        \resumeItemListStart
+            \resumeItem{ Added support for variable interpolation in the AWS Greengrass Client Device Auth component. This change improved developer experience by allowing customers to write more streamlined authorization policies that relied on devices' thing names. Added performance testing to the project for the first time, via Java Microbenchmark Harness, to help mitigate performance regressions. }
+            \resumeItem{ Enhanced the AWS Greengrass MQTT Bridge component to support MQTT5. Added integration testing to the project, when there was previously none, which tests against a real MQTT broker, whose lifecycle is managed via testcontainers. }
+            \resumeItem{ Enhanced the AWS Greengrass EMQX component, allowing customers to configure the EMQX broker dynamically via Greengrass, eliminating the need for a full component restart. This involved modifying a custom EMQX plugin to retrieve Greengrass component configuration via IPC and then calling internal EMQX functions to apply the configuration. }
+            \resumeItem{ Improved messaging canaries by adding individual message tracking. This allowed us to identify dropped messages with complete accuracy. This change was incorporated into our teams SLA calculations and dashboards. }
+            \resumeItem{ Improved the fetching and updating of connectivity information (local broker IP), fixed race conditions, and optimized information caching in the Client Device Auth component. This resulted in more efficient local broker certificate updates and reduced computational load on devices. }
+            \resumeItem{ Provided support to internal and external customers, advising on Greengrass best practices and providing live support for debugging issues. }
+            \resumeItem{ Identified and fixed multiple race conditions in the AWS Greengrass Shadow Manager, a complex component that syncs cloud and local IoT Shadow documents. }
+            \resumeItem{ Integrated a custom, persistent file stream into the AWS FleetWise Edge Agent, enabling customers to reliably collect car data and stream it to the cloud. Delivered an early access release of the project on time while working as part of an away team, in a new domain and in a complex C++ codebase. }
+        \resumeItemListEnd
+    \resumeSubheading
+      {Comcast}{Philadelphia, Pennsylvania}
+      {Software Engineer}{May 2017 \textbf{--} Feb 2022}
+        \resumeItemListStart
+            \resumeItem{ Contributed to a large-scale, distributed DVR scheduling system that serviced over 10 million customers. }
+            \resumeItem{ Built a system that processed one billion TV Tune events per day. I was responsible for all aspects of the project, including design, implementation, infrastructure, monitoring/metrics, and continuous deployment. }
+            \resumeItem{ Designed and delivered an internal API for managing account tiers for DVR customers. The effort deduplicated logic that was previously maintained by several teams. }
+            \resumeItem{ Maintained three web APIs for performing speed tests on customer gateways and devices. }
+            \resumeItem{ Developed a Java library for performing Splunk searches in parallel. The library was used in several reporting applications, reducing their runtimes from minutes to seconds. }
+            \resumeItem{ Provided mentorship to coworkers and served as an interviewer for prospective hires. }
+        \resumeItemListEnd
+    \resumeSubheading
+      {QVC}{West Chester, Pennsylvania}
+      {Software Engineer}{Jan 2016 \textbf{--} May 2017}
+        \resumeItemListStart
+            \resumeItem{ Developed and maintained APIs for warehousing operations. }
+            \resumeItem{ Wrote a system for detecting discrepancies between warehouse management systems. }
+        \resumeItemListEnd
+  \resumeSubHeadingListEnd
 
-\subsection*{Software Engineer, Comcast}
-Philadelphia, PA \textit{(May 2017 - Feb 2022)}
-\begin{itemize}[leftmargin=*]
-    \item Contributed to a large-scale, distributed DVR scheduling system that serviced over 10 million customers.
-    \item Built a system that processed one billion TV Tune events per day. I was responsible for all aspects of the project, including design, implementation, infrastructure, monitoring/metrics, and continuous deployment.
-    \item Designed and delivered an internal API for managing account tiers for DVR customers. The effort deduplicated logic that was previously maintained by several teams.
-    \item Maintained three web APIs for performing speed tests on customer gateways and devices.
-    \item Developed a Java library for performing Splunk searches in parallel. The library was used in several reporting applications, reducing their runtimes from minutes to seconds.
-    \item Provided mentorship to coworkers and served as an interviewer for prospective hires.
-\end{itemize}
+%-------------------------------------------
+% Education
+%-------------------------------------------
 
-\subsection*{Software Engineer, QVC}
-West Chester, PA \textit{(Jan 2016 - May 2017)}
-\begin{itemize}[leftmargin=*]
-    \item Developed and maintained APIs for warehousing operations.
-    \item Wrote a system for detecting discrepancies between warehouse management systems.
-\end{itemize}
+\section{Education}
+  \vspace{3pt}
+  \resumeSubHeadingListStart
+    \resumeEducationHeading
+      {West Chester University of Pennsylvania}{West Chester, Pennsylvania}
+      {B.S. in Computer Science}{Class of 2015}
+        \resumeItemListStart
+        \resumeItem{Summa Cum Laude}
+        \resumeItem{Honors College}
+        \resumeItem{Board of Governors (Full-Tuition) Scholarship}
+        \resumeItemListEnd
+  \resumeSubHeadingListEnd
 
-\section*{Education}
+%-------------------------------------------
+% Skills
+%-------------------------------------------
 
-\subsection*{West Chester University of Pennsylvania}
-B.S. in Computer Science -- Class of 2015
-\begin{itemize}[leftmargin=*]
-    \item Summa Cum Laude
-    \item Honors College
-    \item Board of Governors (Full-Tuition) Scholarship
-\end{itemize}
-
-\section*{Skills}
-\begin{itemize}[leftmargin=*]
-    \item \textbf{Languages}: Java, Python, Golang, Erlang, C++, Typescript
-    \item \textbf{AWS}: IoT Greengrass, IoT Core, FleetWise, ECS, Lambda, CloudWatch, EC2, S3, DynamoDB
-    \item \textbf{Protocols}: MQTT, HTTP
-    \item \textbf{Domains}: IoT, Authentication Systems, Device Software, Web APIs
-\end{itemize}
+\section{Skills}
+  \vspace{2pt}
+  \resumeSubHeadingListStart
+    \small{\item{
+        \textbf{Languages:}{ Java, Python, Golang, Erlang, C++, Typescript } \\ \vspace{3pt}
+        \textbf{AWS:}{ IoT Greengrass, IoT Core, FleetWise, ECS, SNS, SQS, Lambda, CloudWatch, EC2, S3, DynamoDB } \\ \vspace{3pt}
+        \textbf{Protocols:}{ MQTT, HTTP } \\ \vspace{3pt}
+        \textbf{Domains:}{ IoT, Authentication Systems, Device Software, Web APIs } \\ \vspace{3pt}
+    }}
+  \resumeSubHeadingListEnd
 
 \end{document}
