@@ -70,6 +70,8 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
+\newcommand{\resumeLink}[2]{\href{#1}{\textcolor{RoyalBlue}{\underline{#2}}}}
+
 %===========================================
 % BEGIN RESUME
 %-------------------------------------------
@@ -102,12 +104,12 @@
       {Amazon Web Services}{Seattle, Washington}
       {Software Engineer II}{Feb 2022 \textbf{--} Present}
         \resumeItemListStart
-            \resumeItem{ Integrated a custom, persistent file stream into the AWS FleetWise Edge Agent, enabling customers to reliably collect car data and stream it to the cloud. Delivered an early access release of the project on time while working as part of an away team in a new domain and within a complex C++ codebase. }
-            \resumeItem{ Added support for variable interpolation in the AWS Greengrass Client Device Auth component, improving developer experience by allowing customers to write more streamlined authorization policies based on devices' thing names. Introduced performance testing via the Java Microbenchmark Harness to help mitigate performance regressions. }
-            \resumeItem{ Enhanced the AWS Greengrass MQTT Bridge component to support MQTT5. Added integration testing, which was previously absent, to the project, testing against a real MQTT broker. }
-            \resumeItem{ Improved the AWS Greengrass EMQX component by allowing dynamic configuration of the EMQX broker via Greengrass, eliminating the need for a full component restart. This involved modifying a custom EMQX plugin to retrieve Greengrass component configuration via IPC and apply the configuration through internal EMQX functions. }
+            \resumeItem{ Integrated a custom, persistent file stream into the \resumeLink{https://github.com/aws/aws-iot-fleetwise-edge/tree/main}{AWS FleetWise Edge Agent}, enabling customers to reliably collect car data and stream it to the cloud. Delivered an early access release of the feature on time while working as part of an away team in a new domain and within a complex C++ codebase. }
+            \resumeItem{ Added support for variable interpolation in the \resumeLink{https://github.com/aws-greengrass/aws-greengrass-client-device-auth}{AWS Greengrass Client Device Auth} component, improving developer experience by allowing customers to write more streamlined authorization policies based on devices' thing names. Introduced performance testing via the Java Microbenchmark Harness to help mitigate performance regressions. }
+            \resumeItem{ Enhanced the \resumeLink{https://github.com/aws-greengrass/aws-greengrass-mqtt-bridge}{AWS Greengrass MQTT Bridge} component to support MQTT5. Added integration testing, which was previously absent, to the project, testing against a real MQTT broker. }
+            \resumeItem{ Improved the \resumeLink{https://docs.aws.amazon.com/greengrass/v2/developerguide/mqtt-broker-emqx-component.html}{AWS Greengrass EMQX} component by allowing dynamic configuration of the EMQX broker via Greengrass, eliminating the need for a full component restart. This involved modifying a custom EMQX plugin to retrieve Greengrass component configuration via IPC and apply the configuration through internal EMQX functions. }
             \resumeItem{ Enhanced message-sending canaries by accurately tracking dropped messages, which improved our SLA calculations. }
-            \resumeItem{ Improved the AWS Greengrass Client Device Auth component by resolving race conditions and adding caching for connectivity information, which eliminated unnecessary, computationally expensive certificate generation operations. }
+            \resumeItem{ Improved the \resumeLink{https://github.com/aws-greengrass/aws-greengrass-client-device-auth}{AWS Greengrass Client Device Auth} component by resolving race conditions and adding caching for connectivity information, which eliminated unnecessary, computationally expensive certificate generation operations. }
             \resumeItem{ Provided support to internal and external customers, advising on Greengrass best practices and offering live debugging assistance. }
         \resumeItemListEnd
     \resumeSubheading
