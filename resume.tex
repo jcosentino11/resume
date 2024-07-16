@@ -107,7 +107,7 @@
             \resumeItem{ Enhanced the AWS Greengrass MQTT Bridge component to support MQTT5. Added integration testing, which was previously absent, to the project, testing against a real MQTT broker. }
             \resumeItem{ Improved the AWS Greengrass EMQX component by allowing dynamic configuration of the EMQX broker via Greengrass, eliminating the need for a full component restart. This involved modifying a custom EMQX plugin to retrieve Greengrass component configuration via IPC and apply the configuration through internal EMQX functions. }
             \resumeItem{ Enhanced message-sending canaries by accurately tracking dropped messages, which improved our SLA calculations. }
-            \resumeItem{ Removed unnecessary certificate generation operations from the AWS Greengrass Client Device Auth component by fixing race conditions and caching the cloud-fetched connectivity information required for certificate generation. }
+            \resumeItem{ Improved the AWS Greengrass Client Device Auth component by resolving race conditions and adding caching for connectivity information, which eliminated unnecessary, computationally expensive certificate generation operations. }
             \resumeItem{ Provided support to internal and external customers, advising on Greengrass best practices and offering live debugging assistance. }
         \resumeItemListEnd
     \resumeSubheading
@@ -115,8 +115,8 @@
       {Software Engineer}{May 2017 \textbf{--} Feb 2022}
         \resumeItemListStart
             \resumeItem{ Contributed to a large-scale, distributed DVR scheduling system serving over 10 million customers. }
-            \resumeItem{ Developed a system that processed one billion TV Tune events per day, handling all aspects of the project, including design, implementation, infrastructure, monitoring/metrics, and continuous deployment. }
-            \resumeItem{ Designed and delivered an internal API for managing account tiers for DVR customers, consolidating logic previously maintained by multiple teams. }
+            \resumeItem{ Developed a high-capacity system that processed one billion TV Tune events daily. }
+            \resumeItem{ Consolidated business logic from multiple services by building an internal API for managing DVR customers' account tier. }
             \resumeItem{ Maintained three web APIs for performing speed tests on customer gateways and devices. }
             \resumeItem{ Created a Java library for performing parallel Splunk searches, used in several reporting applications to reduce their runtimes from minutes to seconds. }
             \resumeItem{ Provided mentorship to coworkers and participated in interviewing prospective hires. }
