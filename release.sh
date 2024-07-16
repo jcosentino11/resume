@@ -22,3 +22,5 @@ echo "Creating GitHub release"
 git push origin ${NEXT_TAG}
 gh release create --verify-tag --title "Resume ${NEXT_TAG}" --notes "" ${NEXT_TAG} build/resume.pdf
 echo "Resume ${NEXT_TAG} released!"
+
+echo "!! MANUAL ACTION NEEDED: visit https://dash.cloudflare.com/104221e749c97cdce1d43651f0cd59c0/josephcosentino.me/rules/redirect-rules/d871d49813fa43be90f15c43a808c1d0 and update the rule."
