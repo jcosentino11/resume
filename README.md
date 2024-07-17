@@ -25,3 +25,7 @@ The release artifact is simply `resume.pdf`, to update it, perform a release:
 ```
 make release
 ```
+
+## Credits
+
+https://github.com/arasgungore/arasgungore-CV
