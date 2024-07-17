@@ -9,7 +9,6 @@ $(RESUME): $(SOURCE)
 	@mkdir -p $(BUILD_DIR)
 	@cd $(BUILD_DIR) && pdflatex ./../$(SOURCE)
 	@ispell $(SOURCE)
-	@cp $(RESUME) resume.pdf
 
 .PHONY: clean
 clean:
