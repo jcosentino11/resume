@@ -9,6 +9,7 @@ $(RESUME): $(SOURCE)
 	@mkdir -p $(BUILD_DIR)
 	@cd $(BUILD_DIR) && pdflatex ./../$(SOURCE)
 	@ispell $(SOURCE)
+	@cp $(RESUME) resume.pdf
 
 .PHONY: clean
 clean:
@@ -16,7 +17,10 @@ clean:
 
 .PHONY: release
 release: $(RESUME)
-	@./release.sh
+	@cp $(RESUME) resume.pdf
+	@git add resume.pdf
+	@git commit -m "releasing resume.pdf"
+	@git push origin main
 
 .PHONY: deps
 deps:
