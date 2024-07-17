@@ -17,6 +17,7 @@ clean:
 
 .PHONY: release
 release: $(RESUME)
+	@[[ -z "$$(git status -s)" ]] || (echo "please deal with uncommitted changes before releasing"; exit 1)
 	@cp $(RESUME) resume.pdf
 	@git add resume.pdf
 	@git commit -m "releasing resume.pdf"
@@ -24,4 +25,4 @@ release: $(RESUME)
 
 .PHONY: deps
 deps:
-	@brew install mactex gh ispell
+	@brew install mactex ispell

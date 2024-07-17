@@ -11,16 +11,17 @@ Install required dependencies:
 make deps
 ```
 
-Generate the resume PDF:
+Generate the resume:
 ```
 make
 ```
 
-Resume can be found at `build/resume.pdf`
+Output can be found at `build/resume.pdf`
 
 ## Release
 
-Run the following to generate the resume and upload it to GitHub as a release:
+The release artifact is simply `resume.pdf`, to update it, perform a release:
+
 ```
 make release
 ```
