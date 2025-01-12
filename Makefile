@@ -8,7 +8,6 @@ all: $(RESUME)
 $(RESUME): $(SOURCE)
 	@mkdir -p $(BUILD_DIR)
 	@cd $(BUILD_DIR) && pdflatex ./../$(SOURCE)
-	@ispell $(SOURCE)
 
 .PHONY: clean
 clean:
@@ -24,4 +23,4 @@ release: $(RESUME)
 
 .PHONY: deps
 deps:
-	@brew install mactex ispell
+	@brew install mactex
