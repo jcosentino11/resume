@@ -1,4 +1,4 @@
-SOURCE := resume.md
+SOURCE := source.md
 TEMPLATE := template.tex
 
 BUILD_DIR := build
