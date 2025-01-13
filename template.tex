@@ -1,0 +1,122 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeEducationHeading}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} \\
+      \textit{\small#2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\setlist[itemize,2]{label={\tiny\textbullet}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newcommand{\resumeLink}[2]{\href{#1}{\textcolor{RoyalBlue}{\underline{#2}}}}
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape $name$} \\ \vspace{3pt}
+    \small
+    \faAt \hspace{.5pt} \href{mailto:$email$}{$email$}
+    $if(linkedin)$
+    $$ $$ \faLinkedinSquare \hspace{.5pt} \href{https://www.linkedin.com/in/$linkedin$}{$linkedin$}
+    $endif$
+    $if(github)$
+    $$ $$ \faGithub \hspace{.5pt} \href{https://github.com/$github$}{$github$}
+    $endif$
+    $if(website)$
+    $$ $$ \faGlobe \hspace{.5pt} \href{$website$}{$website-text$}
+    $endif$
+\end{center}
+
+$if(experience)$
+\section{Experience}
+\vspace{3pt}
+\resumeSubHeadingListStart
+$for(experience)$
+\resumeSubheading
+  {$it.company$}{$it.location$}
+  {$it.position$}{$it.dates$}
+  \resumeItemListStart
+    $for(it.highlights)$
+    \resumeItem{$it$}
+    $endfor$
+  \resumeItemListEnd
+$endfor$
+\resumeSubHeadingListEnd
+$endif$
+
+$if(skills)$
+\section{Skills}
+\vspace{2pt}
+\resumeSubHeadingListStart
+\small{\item{
+    $for(skills)$
+    \textbf{$it.category$:} {$it.items$} \\ \vspace{3pt}
+    $endfor$
+}}
+\resumeSubHeadingListEnd
+$endif$
+
+$if(education)$
+\section{Education}
+\vspace{3pt}
+\resumeSubHeadingListStart
+$for(education)$
+\resumeEducationHeading
+  {$it.school$}
+  {$it.details$}
+$endfor$
+\resumeSubHeadingListEnd
+$endif$
+
+\end{document}

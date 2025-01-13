@@ -6,11 +6,6 @@ Generate a resume PDF from LaTeX.
 
 ## Quickstart
 
-Install required dependencies:
-```
-make deps
-```
-
 Generate the resume:
 ```
 make

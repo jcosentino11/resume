@@ -1,26 +1,29 @@
-BUILD_DIR = build
-RESUME = $(BUILD_DIR)/resume.pdf
-SOURCE = resume.tex
+SOURCE := resume.md
+TEMPLATE := template.tex
 
-.PHONY: all
-all: $(RESUME)
+BUILD_DIR := build
+OUTPUT_PDF := $(BUILD_DIR)/resume.pdf
+RELEASE_PDF := resume.pdf
 
-$(RESUME): $(SOURCE)
+.PHONY: all clean release
+
+all: $(OUTPUT_PDF)
+
+$(OUTPUT_PDF): $(SOURCE) $(TEMPLATE) | $(BUILD_DIR)
+	@pandoc $(SOURCE) --template=$(TEMPLATE) -o $(OUTPUT_PDF)
+
+$(BUILD_DIR):
 	@mkdir -p $(BUILD_DIR)
-	@cd $(BUILD_DIR) && pdflatex ./../$(SOURCE)
 
-.PHONY: clean
 clean:
 	@rm -rf $(BUILD_DIR)
 
-.PHONY: release
-release: $(RESUME)
-	@[[ -z "$$(git status -s)" ]] || (echo "please deal with uncommitted changes before releasing"; exit 1)
-	@cp $(RESUME) resume.pdf
-	@git add resume.pdf
-	@git commit -m "releasing resume.pdf"
+release: $(OUTPUT_PDF)
+	@if [ -n "$$(git status --porcelain)" ]; then \
+		echo "Error: There are uncommitted changes. Please commit or stash them first."; \
+		exit 1; \
+	fi
+	@cp $(OUTPUT_PDF) $(RELEASE_PDF)
+	@git add $(RELEASE_PDF)
+	@git commit -m "Release: Update resume.pdf"
 	@git push origin main
-
-.PHONY: deps
-deps:
-	@brew install mactex
