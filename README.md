@@ -1,26 +1,12 @@
-# Resume
+# Resume Generator
 
-Generate a resume PDF from LaTeX.
+Turn bullet points into a professional-looking resume, using [Pandoc](https://pandoc.org) and [LaTeX](https://www.latex-project.org).
 
-> Only tested on Mac. YMMV
-
-## Quickstart
-
-Generate the resume:
 ```
+nano source.md
 make
-```
-
-Output can be found at `build/resume.pdf`
-
-## Release
-
-The release artifact is simply `resume.pdf`, to update it, perform a release:
-
-```
-make release
 ```
 
 ## Credits
 
-https://github.com/arasgungore/arasgungore-CV
+* LaTeX template is based off of https://github.com/arasgungore/arasgungore-CV

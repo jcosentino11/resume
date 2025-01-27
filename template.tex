@@ -23,7 +23,6 @@
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
 
 \urlstyle{same}
@@ -31,14 +30,14 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+\titleformat{\section}{\vspace{0pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 \pdfgentounicode=1
 
 \newcommand{\resumeItem}[1]{\item\small{#1 \vspace{-2pt}}}
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
+  \vspace{6pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
@@ -46,7 +45,7 @@
 }
 
 \newcommand{\resumeEducationHeading}[2]{
-  \vspace{-2pt}\item
+  \vspace{6pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} \\
       \textit{\small#2} \\
@@ -97,7 +96,7 @@ $endif$
 
 $if(skills)$
 \section{Skills}
-\vspace{2pt}
+\vspace{6pt}
 \resumeSubHeadingListStart
 \small{\item{
     $for(skills)$
